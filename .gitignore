@@ -1,5 +1,4 @@
 .idea/
-.vscode/
 node_modules/
 build/
 temp/
@@ -10,3 +9,5 @@ dist
 
 uploads/*
 !uploads/.gitkeep
+
+docker/dbdata
