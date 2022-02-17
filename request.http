@@ -1,0 +1,36 @@
+@base_url = http://localhost:3333
+@id = {{CreateProduct.response.body.id}}
+
+###
+# @name CreateProduct
+POST {{base_url}}/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Book X",
+    "price": 19.90,
+    "quantity": 50
+}
+
+###
+# @name ListProducts
+GET {{base_url}}/products HTTP/1.1
+
+###
+# @name ShowProduct
+GET {{base_url}}/products/{{id}} HTTP/1.1
+
+###
+# @name updateProduct
+PUT {{base_url}}/products/{{id}} HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Book Y",
+    "price": 20,
+    "quantity": 5
+}
+
+###
+# @name DeleteProduct
+DELETE {{base_url}}/products/{{id}} HTTP/1.1
