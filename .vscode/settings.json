@@ -1,3 +1,4 @@
 {
-    "cSpell.words": ["apivendas", "Parens", "typeorm"]
+    "cSpell.words": ["apivendas", "Parens", "typeorm"],
+    "thunder-client.loadFromProject": true
 }
