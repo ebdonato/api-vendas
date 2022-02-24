@@ -1,0 +1,179 @@
+@base_url = localhost:3333
+@token = {{CreateSession.response.body.token}}
+
+# @name CreateSession
+POST http://{{base_url}}/sessions
+content-type: application/json
+
+{
+    "email": "fulano.silva@mail.com",
+    "password": "acbdef"
+}
+
+###
+
+# @name ListUsers
+GET http://{{base_url}}/users
+Authorization: Bearer {{token}}
+
+###
+
+# @name CreateUser
+POST http://{{base_url}}/users
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "sarah",
+    "email": "sarah@mail.com",
+    "password": "123456"
+}
+
+###
+
+# @name UpdateAvatar
+PATCH http://{{base_url}}/users/avatar
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="avatar"; filename="my-avatar.png"
+Content-Type: image/png
+
+< ./avatar-sample.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+@product_id = {{CreateProduct.response.body.id}}
+
+# @name CreateProduct
+POST http://{{base_url}}/products
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Book AX Plus",
+    "price": 19.90,
+    "quantity": 50
+}
+
+###
+
+# @name UpdateProduct
+PUT http://{{base_url}}/products/{{product_id}}
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Book Ax",
+    "price": 19.90,
+    "quantity": 50
+}
+
+###
+
+# @name ShowProduct
+GET http://{{base_url}}/products/{{product_id}}
+Authorization: Bearer {{token}}
+
+###
+
+# @name ListProducts
+GET http://{{base_url}}/products
+Authorization: Bearer {{token}}
+
+###
+
+# @name DeleteProduct
+DELETE  http://{{base_url}}/products/{{product_id}}
+Authorization: Bearer {{token}}
+
+###
+
+@costumer_id = {{CreateCostumer.response.body.id}}
+
+# @name CreateCostumer
+POST http://{{base_url}}/costumers
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Cliente Bom",
+    "email": "cliente.bom@xpto.com"
+}
+
+###
+
+# @name UpdateCostumer
+PUT http://{{base_url}}/costumers/{{costumer_id}}
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Cliente Muito Bom",
+    "email": "cliente.bom@xpto.com"
+}
+
+###
+
+# @name ShowCostumer
+GET http://{{base_url}}/costumers/{{costumer_id}}
+Authorization: Bearer {{token}}
+
+###
+
+# @name ListCostumers
+GET http://{{base_url}}/costumers
+Authorization: Bearer {{token}}
+
+###
+
+# @name DeleteCostumer
+DELETE  http://{{base_url}}/costumers/{{costumer_id}}
+Authorization: Bearer {{token}}
+
+###
+
+# @name ForgotPassword
+POST http://{{base_url}}/password/forgot
+content-type: application/json
+
+{
+    "email": "beltrano@mail.com"
+}
+
+###
+
+# @name ResetPassword
+POST http://{{base_url}}/password/reset
+content-type: application/json
+
+{
+  "token": "66bbf6fc-1b02-4a53-916f-51d13021f27e",
+  "password": "654321",
+  "passwordConfirmation": "654321"
+}
+
+###
+
+# @name ShowProfile
+GET http://{{base_url}}/profile
+Authorization: Bearer {{token}}
+
+###
+
+# @name UpdateProfile
+PUT http://{{base_url}}/profile
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "name": "Fulano da Silva",
+    "email": "fulano.silva@mail.com",
+    "password": "acbdef",
+    "password_confirmation": "acbdef",
+    "old_password": "acbdef"
+}
+
+###
