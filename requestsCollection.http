@@ -6,8 +6,8 @@ POST http://{{base_url}}/sessions
 content-type: application/json
 
 {
-    "email": "fulano.silva@mail.com",
-    "password": "acbdef"
+    "email": "fulano@mail.com",
+    "password": "654321"
 }
 
 ###
@@ -53,7 +53,7 @@ Authorization: Bearer {{token}}
 content-type: application/json
 
 {
-    "name": "Book AX Plus",
+    "name": "Book A",
     "price": 19.90,
     "quantity": 50
 }
@@ -140,7 +140,7 @@ POST http://{{base_url}}/password/forgot
 content-type: application/json
 
 {
-    "email": "beltrano@mail.com"
+    "email": "fulano@mail.com"
 }
 
 ###
@@ -150,7 +150,7 @@ POST http://{{base_url}}/password/reset
 content-type: application/json
 
 {
-  "token": "66bbf6fc-1b02-4a53-916f-51d13021f27e",
+  "token": "5fd4f74a-25f5-4b39-804d-9eeb5b1c5db6",
   "password": "654321",
   "passwordConfirmation": "654321"
 }
@@ -175,5 +175,34 @@ content-type: application/json
     "password_confirmation": "acbdef",
     "old_password": "acbdef"
 }
+
+###
+
+@order_id = {{CreateOrder.response.body.id}}
+
+# @name CreateOrder
+POST http://{{base_url}}/orders
+Authorization: Bearer {{token}}
+content-type: application/json
+
+{
+    "costumer_id": "9fdedbf0-874d-4e0e-8c1d-bcb73fce1430",
+    "products": [
+        {
+            "id": "38e96345-0d8d-4732-9314-bf94472d939f",
+            "quantity": 1
+        },
+        {
+            "id": "bb5ed1a4-5b15-44fe-ad5c-d65c9a855c7c",
+            "quantity": 10
+        }
+    ]
+}
+
+###
+
+# @name ShowOrder
+GET http://{{base_url}}/orders/{{order_id}}
+Authorization: Bearer {{token}}
 
 ###
