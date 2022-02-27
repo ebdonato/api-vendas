@@ -7,8 +7,11 @@ import AppError from '@shared/errors/AppError';
 import '@shared/typeorm';
 import { errors } from 'celebrate';
 import { uploadDirectory } from '@config/upload';
+import { pagination } from 'typeorm-pagination';
 
 const app = express();
+
+app.use(pagination);
 
 app.use(cors());
 
