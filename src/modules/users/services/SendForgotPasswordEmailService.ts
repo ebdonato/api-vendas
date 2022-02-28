@@ -2,7 +2,7 @@ import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import UsersRepository from '../typeorm/repositories/UsersRepository';
 import UserTokensRepository from '../typeorm/repositories/UserTokensRepository';
-import EtherealMail from '@config/mail/EtherealMail';
+import SenderMail from '@config/mail/SenderMail';
 import path from 'path';
 
 interface IRequest {
@@ -24,7 +24,7 @@ class SendForgotPasswordEmailService {
 
         const forgotPasswordTemplate = path.resolve(__dirname, '..', 'views', 'forgot_password.hbs');
 
-        await EtherealMail.sendMail({
+        await SenderMail.sendMail({
             to: {
                 name: userExists.name,
                 email: userExists.email,
