@@ -29,13 +29,16 @@ app.use(errors());
 
 //é necessário o último argumento não suado para a assinatura da função ser a correta
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.use((error: Error, _: Request, response: Response, next: NextFunction) => {
+app.use((error: Error, _: Request, response: Response, __: NextFunction) => {
     if (error instanceof AppError) {
         return response.status(error.statusCode).json({
             status: 'Error',
             message: error.message,
         });
     }
+
+    // eslint-disable-next-line no-console
+    console.error('⛔ ', error);
 
     return response.status(500).json({
         status: 'Error',
