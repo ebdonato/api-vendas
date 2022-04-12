@@ -1,10 +1,12 @@
-_id: req_7c0bd6cfb1534e2483fc1c4ea51d73ae
+_id: req_6b2993d2083a405781efcb3a14ca6ec9
 type: Request
-parentId: fld_01e074574c7a48a9b9e5cfa985fb667e
-modified: 1649728446163
-created: 1649727317480
-url: "{{ _.base_url }}/users"
-name: List
+parentId: fld_4959eab744574a06a11e1b3e0728c694
+modified: 1649729841387
+created: 1649729703283
+url: "{{ _.base_url }}/orders/{% response 'body',
+  'req_8fc73e1aa9eb45a08943747de761100b', 'b64::JC5pZA==::46b', 'no-history', 60
+  %}"
+name: Show
 description: ""
 method: GET
 body: {}
@@ -14,7 +16,7 @@ authentication:
   type: bearer
   token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
     'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
-metaSortKey: -1649727317480
+metaSortKey: -1649729283604
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

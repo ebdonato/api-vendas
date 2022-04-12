@@ -1,0 +1,36 @@
+_id: req_48113d446e214798b3b750b78b90125b
+type: Request
+parentId: fld_35ebe03217de40b6a0d0bc173b3fd028
+modified: 1649728502991
+created: 1649728002277
+url: "{{ _.base_url }}/users/avatar"
+name: Update Avatar
+description: ""
+method: PATCH
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_ded01a79446b4a6b9b914405c5ee7d59
+      name: avatar
+      value: ""
+      description: ""
+      type: file
+      multiline: null
+      fileName: E:\GitHub\api-vendas\avatar-sample.png
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_57eaeac10e414ce59e0e026fd210d722
+authentication:
+  type: bearer
+  token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
+    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+metaSortKey: -1649726630643
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,36 @@
+_id: req_fb511d6b14e74d0ab51f309e1aebacf1
+type: Request
+parentId: fld_35ebe03217de40b6a0d0bc173b3fd028
+modified: 1649729310121
+created: 1649729241845
+url: "{{ _.base_url }}/profile"
+name: Update Profile
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Fulano da Silva",
+    	"email": "fulano.tal@mail.com",
+    	"password": "654321",
+    	"password_confirmation": "654321",
+    	"old_password": "acbdef"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_a0ea3f26f19e41b48035ccd6952781f9
+authentication:
+  type: bearer
+  token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
+    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+metaSortKey: -1649729047634.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,42 @@
+_id: req_8fc73e1aa9eb45a08943747de761100b
+type: Request
+parentId: fld_4959eab744574a06a11e1b3e0728c694
+modified: 1649729662326
+created: 1649729393515
+url: "{{ _.base_url }}/orders"
+name: Create
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"costumer_id": "{% response 'body', 'req_c74300db62cd4f728e14ccc4dc8ec5c4', 'b64::JC5kYXRhWzBdLmlk::46b', 'no-history', 60 %}",
+    	"products": [
+    		{
+    			"id": "{% response 'body', 'req_5d95a5cf5e8f4c269631905a8241082e', 'b64::JC5bMF0uaWQ=::46b', 'no-history', 60 %}",
+    			"quantity": 1
+    		},
+    		{
+    			"id": "{% response 'body', 'req_5d95a5cf5e8f4c269631905a8241082e', 'b64::JC5bMV0uaWQ=::46b', 'no-history', 60 %}",
+    			"quantity": 10
+    		}
+    	]
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_56de1632758d4fa9b8a0457e84d39652
+authentication:
+  type: bearer
+  token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
+    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+metaSortKey: -1649729393515
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
