@@ -1,0 +1,24 @@
+_id: req_7c0bd6cfb1534e2483fc1c4ea51d73ae
+type: Request
+parentId: fld_01e074574c7a48a9b9e5cfa985fb667e
+modified: 1649727425937
+created: 1649727317480
+url: "{{ _.base_url }}/users"
+name: List Users
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
+    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+metaSortKey: -1649727317480
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

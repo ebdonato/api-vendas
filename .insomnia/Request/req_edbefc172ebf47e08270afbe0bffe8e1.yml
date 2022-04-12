@@ -1,0 +1,30 @@
+_id: req_edbefc172ebf47e08270afbe0bffe8e1
+type: Request
+parentId: fld_35ebe03217de40b6a0d0bc173b3fd028
+modified: 1649727421444
+created: 1649726119589
+url: "{{ _.base_url }}/sessions"
+name: Create Session
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "fulano.tal@mail.com",
+    	"password": "654321"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_ba083a642956443a8e8d1373cc0b0f7a
+authentication: {}
+metaSortKey: -1649726630793
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

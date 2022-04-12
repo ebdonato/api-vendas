@@ -1,0 +1,31 @@
+_id: req_ce70e8fd413b401f9dd5f99c4245d037
+type: Request
+parentId: fld_35ebe03217de40b6a0d0bc173b3fd028
+modified: 1649727424690
+created: 1649726630693
+url: "{{ _.base_url }}/password/reset"
+name: Reset Password
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "token": "17f52a3d-56c7-479b-b715-03f1b9c03ab7",
+      "password": "654321",
+      "passwordConfirmation": "654321"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_bf42631f04674b039f1fe2460cccb331
+authentication: {}
+metaSortKey: -1649726630693
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
