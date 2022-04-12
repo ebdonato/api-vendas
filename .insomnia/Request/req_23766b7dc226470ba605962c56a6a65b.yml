@@ -3,27 +3,27 @@ type: Request
 parentId: fld_756666d11e4c4a2591360c44b1f640dd
 modified: 1649729537599
 created: 1649728466189
-url: "{{ _.base_url }}/products"
+url: '{{ _.base_url }}/products'
 name: Create
-description: ""
+description: ''
 method: POST
 body:
-  mimeType: application/json
-  text: |-
-    {
-    	"name": "Book B",
-    	"price": 19.90,
-    	"quantity": 50
-    }
+    mimeType: application/json
+    text: |-
+        {
+        	"name": "Book Top",
+        	"price": 9.90,
+        	"quantity": 12
+        }
 parameters: []
 headers:
-  - name: Content-Type
-    value: application/json
-    id: pair_7f45102326804f41a9db3209c93d551e
+    - name: Content-Type
+      value: application/json
+      id: pair_7f45102326804f41a9db3209c93d551e
 authentication:
-  type: bearer
-  token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
-    'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
+    type: bearer
+    token: "{% response 'body', 'req_edbefc172ebf47e08270afbe0bffe8e1',
+        'b64::JC50b2tlbg==::46b', 'no-history', 60 %}"
 metaSortKey: -1649728466189
 isPrivate: false
 settingStoreCookies: true
